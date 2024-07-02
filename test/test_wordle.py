@@ -1,7 +1,22 @@
 import unittest 
+
+from enum import Enum
 from src import Wordle as Wordle
-from src.Wordle import Match
-from src.Wordle import Status
+
+class Match(Enum):
+    EXACT = 1
+    MATCH = 0
+    NO_MATCH = -1
+
+
+class Status(Enum):
+    WON = 1
+    LOST = 0
+    IN_PROGRESS = -1
+
+
+TARGET_WORD = "FAVOR"
+WORD_SIZE = len(TARGET_WORD)
 
 
 class WordleTest(unittest.TestCase):
